@@ -51,7 +51,6 @@ export class Compiler extends BaseCompiler {
         const result = classConverter.joinExports();
 
         DirHelper.mkdirIfNotExist(outputDir);
-        this.saveBaseAvroRecord();
         this.saveEnums(classConverter.enumExports, outputDir);
         this.saveClass(outputDir, data, result);
         console.log(`Wrote ${data.name}.ts in ${outputDir}`);
