@@ -32,9 +32,6 @@ export class ClassConverter extends RecordConverter {
         importExportModel.name = "imports";
         importExportModel.content = this.importRows.join(SpecialCharacterHelper.NEW_LINE);
 
-        classExportModel.name = data.name;
-        classExportModel.content = this.classRows.join(SpecialCharacterHelper.NEW_LINE);
-
         interfaceExportModel.name = data.name + this.interfaceSuffix;
         interfaceExportModel.content = this.interfaceRows.join(SpecialCharacterHelper.NEW_LINE);
 
@@ -52,7 +49,6 @@ export class ClassConverter extends RecordConverter {
         const dirsUp: number = data.namespace.split(".").length;
 
         rows.push(`// tslint:disable`);
-        rows.push(`import { BaseAvroRecord } from "` + "../".repeat(dirsUp) + `BaseAvroRecord";`);
 
         for (const enumFile of this.enumExports) {
             const importLine = `import { ${enumFile.name} } from "./${enumFile.name}Enum";`;
