@@ -30,7 +30,8 @@
     "tslint-jenkins": "tslint --project tsconfig.json -o tslint.xml -t checkstyle",
     "mocha": "mocha dist/test --reporter=nyan --recursive",
     "travis:test": "npm run build && npm run test",
-    "premocha": "npm run build"
+    "premocha": "npm run build",
+    "prepare": "npm run build"
   },
   "author": "Degordian (https://www.degordian.com/)",
   "license": "MIT",
